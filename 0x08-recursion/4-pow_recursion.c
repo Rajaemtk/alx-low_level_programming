@@ -1,17 +1,18 @@
 #include "main.h"
 
-int actual_sqrt_recursion(int n, int i);
-
 /**
- * _sqrt_recursion - returns the natural square root of a number
- * @n: number to calculate the square root of
+ * _pow_recursion - returns the value of x raised to the power of y
+ * @x: value to raise
+ * @y: power
  *
- * Return: the resulting square root
+ * Return: result of the power
  */
-int _sqrt_recursion(int n)
+int _pow_recursion(int x, int y)
 {
-	if (n < 0)
+	if (y < 0)
 		return (-1);
-	return (actual_sqrt_recursion(n, 0));
+	if (y == 0)
+		return (1);
+	return (x * _pow_recursion(x, y - 1));
 }
 
